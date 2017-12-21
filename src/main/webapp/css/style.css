@@ -5,11 +5,11 @@
 @media (min-width:768px){.navbar-default{background-color:#fff;}}
 
 #container { }
-#contents { width:100%; max-width:1160px; margin:40px auto; }
-.ltbl {display:inline-block; width:210px; vertical-align:top; margin-right:-4px; height:300px; background:#fff; }
-.rtbl {display:inline-block; width:890px; vertical-align:top; margin-left:60px; background:#fff; margin-right:-4px; }
+#contents { width:100%; max-width:1160px; margin:40px auto; display:table }
+.ltbl {display:table-cell; width:260px; vertical-align:top; height:300px; background:#fff; }
+.rtbl {display:table-cell; width:900px; min-width:900px; vertical-align:top; margin-left:60px; background:#fff; }
 
-.page_sub_title { font-size:125%; line-height:2.6; text-decoration:none; letter-spacing:-0.0em; color: #0060b8; background-color: #fff; font-weight:600; padding:0px 0.0em; }
+.page_sub_title { font-size:150%; line-height:2.6; text-decoration:none; letter-spacing:-0.0em; color: #3d8fb4; background-color: #fff; font-weight:600; padding:0px 0.0em; padding-left: 28px; background-image: url(/images/bullet.png);	background-repeat: no-repeat;	background-position: 0px 50%; background-size: auto auto}
 .sub_gallery img { display:inline-block; width:32%;}
 
 .dark, a.dark:link, a.dark:hover, a.dark:active, a.dark:visited {color:#111;}
@@ -197,10 +197,12 @@ blockquote.center{ text-align: center; margin: 10px 10px 20px 20px; }
 .shortcode3-5.last{ margin-right: 0; width: 60%; }
 .shortcode4-5.last{ margin-right: 0; width: 80%; }
 
-.shortcode1-1{ width: 100%; line-height:1.7; }
+.shortcode1-1{ display:inline-block; width: 100%; line-height:1.7; }
 .shortcode1-1 .btn_view { display:inline-block; width:24%; margin-right:-4px; background-color:#3181cc; text-align:center; border:1px solid #3478b7; margin:5px auto; padding:0px 10px; color:#FFF; line-height:2.6; cursor:point; font-size:90%; }
 .shortcode1-1 li { padding-top:5px; padding-bottom:0px; }
-.shortcode1-1 li { background:url(../img/bullet_content.png) no-repeat 3px 11px; padding-left:14px;}
+.shortcode1-1 li { background:url(../images/bullet_content.png) no-repeat 3px 11px; padding-left:14px;}
+
+.shortcode1-1 img { text-align:center;margin:0px auto; }
 
 .alignleft, img.alignleft { float:left; margin: 5px 20px 20px 0px; }
 .alignright, img.alignright { float:right; margin: 5px 0px 20px 20px; }
@@ -428,3 +430,4 @@ blockquote.center{ text-align: center; margin: 10px 10px 20px 20px; }
   .cont_2_30 {display:inline-block;vertical-align:top; width:29%; margin-right:-4px; margin-left:2%; text-align:right; }
   
 }
+.center{ text-align: center; }

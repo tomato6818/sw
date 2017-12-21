@@ -58,6 +58,10 @@
 					<option value="project">산학프로젝트</option>
 				</select>
 				<%
+  				}else{
+				%>
+				<label class="input"><input type="checkbox" id="notice" name="notice" value="Y" > 교육시설</label>
+				<%
   				}
 				%>
   			</div>
@@ -97,7 +101,7 @@
   		<div class="col-xs-12 col-input">
   			<div class="input-group input-group-sm">
   				<span class="input-group-addon input-group-addon-sm">파일 #2</span>
-  				<input type="text" class="form-control input-sm input-file" id="viewfile2" placeholder="0 바이트 이하의 파일만 업로드 가능" readonly>
+  				<input type="text" class="form-control input-sm input-file" id="viewfile2" placeholder="" readonly>
   				<span class="input-group-btn">
   					<span class="btn btn-primary btn-file">
   						<i class="glyphicon glyphicon-folder-open"></i> &nbsp;파일선택<input type="file" name="file2" id="file2" onchange="fileChange('file2','viewfile2')">
@@ -108,7 +112,7 @@
   		<div class="col-xs-12 col-input">
   			<div class="input-group input-group-sm">
   				<span class="input-group-addon input-group-addon-sm">파일 #3</span>
-  				<input type="text" class="form-control input-sm input-file" id="viewfile3" placeholder="0 바이트 이하의 파일만 업로드 가능" readonly>
+  				<input type="text" class="form-control input-sm input-file" id="viewfile3" placeholder="" readonly>
   				<span class="input-group-btn">
   					<span class="btn btn-primary btn-file">
   						<i class="glyphicon glyphicon-folder-open"></i> &nbsp;파일선택<input type="file" name="file3" id="file3" onchange="fileChange('file3','viewfile3')">

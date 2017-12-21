@@ -57,7 +57,7 @@
 						  <div class="no-image">
 								<div class="vmiddle-wrapper">
 									<div class="vmiddle-section">
-										<%if(row.getImagesavefile()!=null){ out.write("<img src=\"/board/download?name="+row.getImagesavefile()+"\""); }%>
+										<%if(row.getImagesavefile()!=null){ out.write("<img src=\"/file/download?name="+row.getImagesavefile()+"\">"); }%>
 										<h4 class="st-font1"><i class="glyphicon glyphicon-picture"></i> <strong></strong>
 									</div>
 								</div>
@@ -81,7 +81,10 @@
 			<a href="#" class="btn btn-sm btn-default">처음목록</a>
 		</div>
 		<div class="right">
-			<a href="/gallery/move_create"  class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a>
+			<%
+			if(auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){%>
+				<a href="/gallery/move_create"  class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a>
+			<%} %>
 		</div>
 	</div>
 	

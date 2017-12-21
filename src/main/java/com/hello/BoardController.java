@@ -21,6 +21,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,20 +36,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class BoardController {
 
-	//@Autowired
-	//private IBoardService boardService;
-
-	//@Autowired
-	//private IGalleryService galleryService;
-	
 	@Autowired
 	private BoardRepository boardRepo;
 	
 	@Autowired
 	private GalleryRepository galleryRepo;
-
-	@Value("${file.root.path}")
-	private String fileRootPath;
+	
+	@Autowired
+	private FileManager fileMgr;
 
 	@RequestMapping({"/board/all","/gallery/all"})
 	public String getPaging(HttpServletRequest request,Model m, Pageable pageable,
@@ -76,8 +72,8 @@ public class BoardController {
 		}else{
 		/*갤러*/
 			PageRequest pageRequest = new PageRequest(page, 10, Sort.Direction.DESC, "creadtm");
-			Page<SWGALLERY> list = galleryRepo.findByNoticeyn("N", pageRequest);
-	
+			Page<SWGALLERY> list = galleryRepo.findAll(pageRequest);
+			
 			m.addAttribute("list", list);
 	
 			return "bbs/gallery";
@@ -117,34 +113,36 @@ public class BoardController {
 		else
 			board = new SWGALLERY();
 		
+		
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		board.setTitle(title);
 		board.setContents(contents);
-		board.setCreaid("admin");
+		board.setCreaid(user.getUsername());
 		board.setHitcnt(0);
 		board.setParentid(-1);
 		board.setDelgb("N");
 		board.setType(type);
 		board.setNoticeyn(notice);
 
-		String imageSaveName = fileUpload(imagefile);
+		String imageSaveName = fileMgr.fileUpload(imagefile);
 		if (imageSaveName != null) {
 			board.setImagefile(imagefile.getOriginalFilename());
 			board.setImagesavefile(imageSaveName);
 		}
 
-		String file1SaveName = fileUpload(file1);
+		String file1SaveName = fileMgr.fileUpload(file1);
 		if (file1SaveName != null) {
 			board.setFile1(file1.getOriginalFilename());
 			board.setSavefile1(file1SaveName);
 		}
 
-		String file2SaveName = fileUpload(file2);
+		String file2SaveName = fileMgr.fileUpload(file2);
 		if (file2SaveName != null) {
 			board.setFile2(file2.getOriginalFilename());
 			board.setSavefile2(file2SaveName);
 		}
 
-		String file3SaveName = fileUpload(file3);
+		String file3SaveName = fileMgr.fileUpload(file3);
 		if (file3SaveName != null) {
 			board.setFile3(file3.getOriginalFilename());
 			board.setSavefile3(file3SaveName);
@@ -211,10 +209,6 @@ public class BoardController {
 			@RequestParam("file2") MultipartFile file2, @RequestParam("file3") MultipartFile file3,
 			RedirectAttributes redirectAttributes) {
 		
-		System.out.println(imagefile.getOriginalFilename());
-		System.out.println(file1.getOriginalFilename());
-		System.out.println(file2.getOriginalFilename());
-		System.out.println(file3.getOriginalFilename());
 		SWSUPERBOARD board;
 		
 		if(request.getServletPath().equals("/board/update")) 
@@ -224,7 +218,6 @@ public class BoardController {
 		board.setId(id);
 		board.setTitle(title);
 		board.setContents(contents);
-		board.setCreaid("admin");
 		board.setType(type);
 		
 		if(notice==null)
@@ -232,25 +225,25 @@ public class BoardController {
 		else
 			board.setNoticeyn("Y");
 		
-		String imageSaveName = fileUpload(imagefile);
+		String imageSaveName = fileMgr.fileUpload(imagefile);
 		if (imageSaveName != null) {
 			board.setImagefile(imagefile.getOriginalFilename());
 			board.setImagesavefile(imageSaveName);
 		}
 
-		String file1SaveName = fileUpload(file1);
+		String file1SaveName = fileMgr.fileUpload(file1);
 		if (file1SaveName != null) {
 			board.setFile1(file1.getOriginalFilename());
 			board.setSavefile1(file1SaveName);
 		}
 
-		String file2SaveName = fileUpload(file2);
+		String file2SaveName = fileMgr.fileUpload(file2);
 		if (file2SaveName != null) {
 			board.setFile2(file2.getOriginalFilename());
 			board.setSavefile2(file2SaveName);
 		}
 
-		String file3SaveName = fileUpload(file3);
+		String file3SaveName = fileMgr.fileUpload(file3);
 		if (file3SaveName != null) {
 			board.setFile3(file3.getOriginalFilename());
 			board.setSavefile3(file3SaveName);
@@ -284,64 +277,16 @@ public class BoardController {
 		
 	}
 	
-	private String fileUpload(MultipartFile inputFile) {
+	
+	@RequestMapping("/education/all")
+	public String getEducation(HttpServletRequest request,Model m) {
+			List<SWGALLERY> list = galleryRepo.findByNoticeyn("Y");
+	
+			m.addAttribute("list", list);
+	
+			return "content/a_4";
 
-		String originalFileName = inputFile.getOriginalFilename();
-
-		if (originalFileName != null && originalFileName.trim().length() > 0) {
-			String extension = splitExtension(originalFileName);
-			String filename = fileRootPath + "/" + System.currentTimeMillis() + "_" + (new Random()).nextInt(1000);
-			String outputFilename = filename + "." + extension;
-			try {
-				Files.copy(inputFile.getInputStream(), Paths.get(outputFilename), StandardCopyOption.REPLACE_EXISTING);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			return outputFilename;
-		}
-
-		return null;
-	}
-
-	@RequestMapping(value = "/board/download", method = RequestMethod.GET)
-	public StreamingResponseBody getSteamingFile(HttpServletResponse response,
-			@RequestParam(value = "name", required = true) String name) throws IOException {
-
-		Path srcFilePath = Paths.get(name);
-		File srcFile = new File(name);
-		String extension = splitExtension(srcFilePath.getFileName().toString());
-		response.setContentType("image/"+getImageTypeByExtension(extension));
-		response.setHeader("Content-Disposition", "attachment; filename=\"" + srcFilePath.getFileName() + "\"");
-		InputStream inputStream = new FileInputStream(srcFile);
-		return outputStream -> {
-			int nRead;
-			byte[] data = new byte[1024];
-			while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
-				outputStream.write(data, 0, nRead);
-			}
-		};
 	}
 	
-	private String splitExtension(String fileName) {
-		String extension = "";
-
-		int i = fileName.lastIndexOf('.');
-		if (i > 0) {
-			extension = fileName.substring(i + 1);
-		}
-
-		return extension;
-	}
 	
-	private String getImageTypeByExtension(String extension) {
-		if(extension.equals("jpg"))
-			return "jpeg";
-		else if(extension.equals("png"))
-			return "png";
-		else if(extension.equals("gif"))
-			return "gif";
-		return extension;
-	}
 }

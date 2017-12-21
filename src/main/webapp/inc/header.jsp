@@ -1,3 +1,6 @@
+<%@page import="org.springframework.security.core.authority.SimpleGrantedAuthority"%>
+<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
+<%@page import="org.springframework.security.core.Authentication"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%--
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -10,6 +13,7 @@
 --%>
 <%
 String SW_PATH = "" ;
+Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -98,21 +102,23 @@ $( document ).ready( function() {
 <script type="text/javascript" src='//gifted.hanyang.ac.kr/comm/js/script.js' type='text/javascript'></script>
 <script language="javascript" src="//gifted.hanyang.ac.kr/comm/js/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script type="text/javascript" src="/js/jquery.bxslider.js"></script>
-<link rel="stylesheet" type="text/css" href="//gifted.hanyang.ac.kr/comm/css/jquery.bxslider.css" />
+<link rel="stylesheet" type="text/css" href="/css/jquery.bxslider.css" />
 
 	<div id="header">
+	  <!--
 		<div class="top_link">
 			<div class="cont_1160">
 				<ul>
-					<li class="home"><a href="">홈으로</a></li>
+					<li class="home"><a href="/">홈으로</a></li>
 					<li><a href='/member/login.jsp?prev=/index.jsp'>로그인</a></li>
 					<li><a href="#" class="sitemap openMask2">사이트맵</a></li>
 				</ul>
 			</div>
 		</div>
+		-->
 		<div class="header_area">
 			<div class="cont_1160">
-				<h1><a href=""><img src="/images/top_logo1.png" alt="소중대지원사업단" border="0" /></a></h1>
+				<h1><a href="/"><img src="/images/top_logo1.png" alt="소중대지원사업단" border="0" /></a></h1>
 				<div id="menu">
 					<div class="gnbDiv" style="height:63px;">
 						<div class="gnbWrap">
@@ -126,9 +132,9 @@ $( document ).ready( function() {
     <a href="/content/a_1.jsp" class="disB off">단장 인사말</a>
     <a href="/content/a_2.jsp" class="disB off">사업 소개</a>
     <a href="/content/a_3.jsp" class="disB off">사업단 조직</a>
-    <a href="/content/a_4.jsp" class="disB off">교육 시설</a>
+    <a href="/education/all" class="disB off">교육 시설</a>
     <a href="/content/a_5.jsp" class="disB off">연간 일정</a>
-    <a href="/content/a_6.jsp" class="disB off">찾아오는 길</a>
+    <a href="/content/a_6.jsp" class="disB off">찾아오시는 길</a>
   </p>
 </li>
 <li class="two">
@@ -139,8 +145,8 @@ $( document ).ready( function() {
     <a href="/content/b_3.jsp" class="disB off">오픈소스SW 교육</a>
     <a href="/content/b_4.jsp" class="disB off">졸업프로젝트</a>
     <a href="/content/b_5.jsp" class="disB off">인턴쉽</a>
-    <a href="/content/b_6.jsp" class="disB off">기업-대학 협동과목</a>
-    <a href="/content/b_7.jsp" class="disB off">해외 교육</a>
+    <a href="/content/b_6.jsp" class="disB off">해외 교육 및 해외 인턴쉽</a>
+    <a href="/content/b_7.jsp" class="disB off">기업-대학 협동과목</a>
     <a href="/content/b_8.jsp" class="disB off">영어 교육</a>
     <a href="/content/b_9.jsp" class="disB off">창업 교육</a>
     <a href="/content/b_10.jsp" class="disB off">동아리 지원 프로그램</a>
@@ -169,6 +175,7 @@ $( document ).ready( function() {
   <p class="twoDep">
     <a href="/board/all" class="disB off">게시판</a>
     <a href="/gallery/all" class="disB off">갤러리</a>
+    <a href="/bbs/program_list.jsp" class="disB off">프로그램 접수현황</a>
   </p>
 </li>
 								</ul>

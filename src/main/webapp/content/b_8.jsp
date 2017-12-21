@@ -30,27 +30,26 @@
 <%@include file="/inc/navi.jsp"%>
           
           <div class="shortcode1-1">
-            <p><span class="page_sub_title">서브타이틀</span></p>
+            <p><span class="page_sub_title">프로그램 소개</span></p>
           </div>
           <div class="shortcode1-1">
-            
+            <p>소프트웨어중심대학사업단에서는 기존 교육을 전면적으로 개편하여 밀착형 실무영어교육 IceT프로그램을 운영하고 있습니다. 기존 "전문학술영어"와 "전공멘토링"을 SW실용영어 특성화 교과목으로 개편하고, 추가로 "SW실무영어" 교과목을 신설하였습니다.</p>
+            <p>전공분야의 영어능력 향상을 위해 연간 15개 이상의 영어전용강의를 개설하고 있으며 SW전공자는 5개 이상의 영어전용강의 수강해야 졸업자격을 획득합니다.</p>
+          </div>
+          <div class="shortcode1-1">&nbsp;</div>
+          <div class="shortcode1-1">
+            <img alt="" src="/images/b/b_8_1.png" style="max-width:100%;">
           </div>
           
+          <div class="shortcode1-1">&nbsp;</div>
+          <div class="shortcode1-1">&nbsp;</div>
+          
           <div class="shortcode1-1">
-            <p><span class="page_sub_title">서브타이틀</span></p>
+            <p><span class="page_sub_title">영어 능력 향상을 위한 정규 · 비정규 교육과정 프로그램</span></p>
           </div>
+          <div class="shortcode1-1">&nbsp;</div>
           <div class="shortcode1-1">
-            <img alt="" src="/images/b/eet_img.png" style="max-width:100%;">
-          </div>
-            
-          <div class="shortcode1-1">
-            <div class="cont_left_70">
-              <div class="shortcode1-1">
-              </div>
-            </div>
-            <div class="cont_right_30">
-              <img alt="" src="/images/b/eet_img.png" style="max-width:100%;">
-            </div>
+            <img alt="" src="/images/b/b_8_2.png" style="max-width:100%;">
           </div>
           
         </div>

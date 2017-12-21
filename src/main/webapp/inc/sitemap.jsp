@@ -138,8 +138,8 @@ $( document ).ready( function() {
     <a href="/content/b_3.jsp" class="disB off">오픈소스SW 교육</a>
     <a href="/content/b_4.jsp" class="disB off">졸업프로젝트</a>
     <a href="/content/b_5.jsp" class="disB off">인턴쉽</a>
-    <a href="/content/b_6.jsp" class="disB off">기업-대학 협동과목</a>
-    <a href="/content/b_7.jsp" class="disB off">해외 교육</a>
+    <a href="/content/b_6.jsp" class="disB off">해외 교육 및 해외 인턴쉽</a>
+    <a href="/content/b_7.jsp" class="disB off">기업-대학 협동과목</a>
     <a href="/content/b_8.jsp" class="disB off">영어 교육</a>
     <a href="/content/b_9.jsp" class="disB off">창업 교육</a>
     <a href="/content/b_10.jsp" class="disB off">동아리 지원 프로그램</a>

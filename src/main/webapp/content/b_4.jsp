@@ -2,7 +2,7 @@
 <%
 	String GROUP_CODE = "B" ;
 	String PAGE_CODE = "b_4" ;
-	String PAGE_NAME = "졸업프로젝트(김종수)" ; // 페이지 타이틀
+	String PAGE_NAME = "졸업프로젝트" ; // 페이지 타이틀
 %>
 <c:set var="GROUP_CODE" value="<%=GROUP_CODE %>" />
 <c:set var="PAGE_CODE" value="<%=PAGE_CODE %>" />

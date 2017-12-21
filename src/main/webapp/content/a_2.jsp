@@ -29,10 +29,12 @@
         <div class="rtbl">
 <%@include file="/inc/navi.jsp"%>
 
-<div>
-        컨텐츠
-</div>
-
+          <div class="shortcode1-1">
+            <img alt="" src="/images/a/a_2_1.png" style="max-width:100%;">
+          </div>
+          <div class="shortcode1-1">&nbsp;</div>
+          
+          
         </div>
         <!-- // 본문영역 -->
         

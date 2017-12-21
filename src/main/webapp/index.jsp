@@ -1,4 +1,7 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="com.hello.SWBOARD"%>
 <%
 	String GROUP_CODE = "" ;
 	String BBS_CODE = "" ; // 게시판코드
@@ -23,41 +26,84 @@
 					<h2>공지사항</h2>
 					<div class="notice_bg">
 						<ul>
-							<li><a href="#">[특강안내] 한양대학교 소프트웨어 영재교육... </a><span>2017.11.02</span></li>
-							<li><a href="#">[2018학년도 입시] 1단계 적성검사 고사장 및... </a><span>2017.10.30</span></li>
-							<li><a href="#">[한양대학교 소프트웨어 영재교육원] 진학어... </a><span>2017.10.20</span></li>
-							<li><a href="#">[한양대학교 소프트웨어 영재교육원] 진학어... </a><span>2017.10.20</span></li>
-							<li><a href="#">[한양대학교 소프트웨어 영재교육원] 진학어... </a><span>2017.10.20</span></li>
+						<%
+						SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+						List<SWBOARD> noticeList = (List<SWBOARD>)request.getAttribute("noticeBoardList");
+						
+					    if(noticeList!=null && noticeList.size()>0){
+					    		for(int i=0;i<noticeList.size();i++){
+					    			if(i>5)
+					    				break;
+					    			SWBOARD noticerow=noticeList.get(i);
+					    			
+					    			String type="";
+					    			if(noticerow.getType().equals("inter"))
+					    					type="인턴쉽";
+								else if(noticerow.getType().equals("project"))
+										type="산학프로젝트";
+					    			
+					    			String title=noticerow.getTitle();
+					    			
+					    			if(title!=null&&title.length()>20)
+					    				title=title.substring(0,18)+"...";
+						%>
+								<li><a href="/board/one?id=<%=noticerow.getId()%>" style="color:#444;"><font class="semidark">[<%=type%>]</font> <%=title %> </a><span><%=sdf.format(noticerow.getCreadtm()) %></span></li>
+						<%
+					    		}
+					    }
+						%>
 						</ul>
 					</div>
-					<a href="notice/notice.php" class="more"><img src="/images/main/more.png" border="0" alt="더 보기" /></a>
+					<a href="/board/all" class="more"><img src="/images/main/more.png" border="0" alt="더 보기" /></a>
 				</div>
-				<a href="customer/book.php" class="bn_book">
-					<h2></h2>
-					<span></span>
-				</a>
-				<div class="board edu">
-					<h2>뉴스 및 정보</h2>
+				<div class="board notice" style="width:350px; margin-left:-1px;">
+					<h2>프로그램 접수현황</h2>
 					<div class="edu_bg">
 						<ul>
-							<li><a href="#" target="_blank">[창간 35주년 특집 Ⅰ]산업이 미래다<2>SW, 산...</a><span>17.10.03</span></li>
-							<li><a href="#" target="_blank">토마스 한 지멘스 CSO 방한 … &quot;제조기업...</a><span>17.09.14</span></li>
-							<li><a href="#" target="_blank">세계는 어떻게 SW·ICT 교육 진행하나</a><span>17.09.07</span></li>
-							<li><a href="#" target="_blank">&quot;4차산업혁명, 초연결 기반으로 한 지능...</a><span>17.08.21</span></li>
-							<li><a href="#" target="_blank">[월요논단]4차산업혁명, 일자리 선점할 SW교육...</a><span>17.07.31</span></li>
+							<li><a href="/content/b_5.jsp" style="width:100%; color:#444;"><font class="red">[접수중]</font> 2018 동계방학 국내인턴쉽 신청</a></li>
+							<li><a href="/content/b_6.jsp" style="width:100%; color:#444;"><font class="red">[접수중]</font> 2018 해외SW교육 신청(미국 UCI)</a></li>
+							<li><a href="/content/b_10.jsp" style="width:100%; color:#444;"><font class="blue">[상시접수]</font> 2018 학술동아리 활동지원</a></li>
+							<li><a href="/content/b_4.jsp" style="width:100%; color:#444;"><font class="semidark">[접수마감]</font> 2018 산학협력프로젝트 R&D성과</a></li>
+							<li><a href="/content/d_1.jsp" style="width:100%; color:#444;"><font class="semidark">[접수마감]</font> 2017 2학기 한양SW봉사단 모집</a></li>
 						</ul>
 					</div>
-					<a href="customer/edu_info.php" class="more"><img src="/images/main/more.png" border="0" alt="더 보기" /></a>
-				</div>	
+					<!-- <a href="/bbs/program_list.jsp" class="more"><img src="/images/main/more.png" border="0" alt="더 보기" /></a> -->
+				</div>
+				<div class="board gallery" style="margin-left:-1px;">
+					<h2>갤러리</h2>
+					<div class="edu_bg">
+<style>
+.slider_wrap {width:220px;height:140px;margin:0px auto;padding:0px; text-align:center; }
+#slider_a_4 {width:220px;height:140px;margin:0px auto;padding:0px; text-align:center; }
+.bx-wrapper .bx-prev { left: -40px; }
+.bx-wrapper .bx-next { right:-40px; }
+</style>
+<div class="slider_wrap">
+  <div id="slider_gallery">
+    <span><img src="/images/sample_img.png" /></span>
+    <span><img src="/images/sample_img.png" /></span>
+    <span><img src="/images/sample_img.png" /></span>
+  </div>
+</div>
+<script>
+$(document).ready(function() {
+  var slider = $('#slider_gallery').bxSlider({
+    pager: false,
+    captions: true
+  });
+});
+</script>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="banner" class="cont_1160">
 			<ul>
-				<li class="one"><a href="#"><span><img src="/images/main/mid_bnr_1.png"></span><span>교육과정</span></a></li>
-				<li class="two"><a href="#"><span><img src="/images/main/mid_bnr_2.png"></span><span>학사일정</span></a></li>
-				<li class="three"><a href="#"><span><img src="/images/main/mid_bnr_3.png"></span><span>선발원칙</span></a></li>
-				<li class="four"><a href="#"><span><img src="/images/main/mid_bnr_4.png"></span><span>입학안내</span></a></li>
-				<li class="five"><a href="#"><span><img src="/images/main/mid_bnr_5.png"></span><span>자주묻는질문</span></a></li>
+				<li class="one"><a href="#"><span><img src="/images/main/mid_bnr_1.png"></span><span>국내인턴쉽</span></a></li>
+				<li class="two"><a href="#"><span><img src="/images/main/mid_bnr_4.png"></span><span>졸업프로젝트</span></a></li>
+				<li class="three"><a href="#"><span><img src="/images/main/mid_bnr_5.png"></span><span>오픈소스SW교육</span></a></li>
+				<li class="four"><a href="#"><span><img src="/images/main/mid_bnr_3.png"></span><span>해외교육/인턴쉽</span></a></li>
+				<li class="five"><a href="#"><span><img src="/images/main/mid_bnr_2.png"></span><span>연간일정</span></a></li>
 			</ul>
 		</div>
 	</div>

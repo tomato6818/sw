@@ -2,7 +2,7 @@
 <%
 	String GROUP_CODE = "B" ;
 	String PAGE_CODE = "b_1" ;
-	String PAGE_NAME = "교육 커리큘럼(김광욱)" ; // 페이지 타이틀
+	String PAGE_NAME = "교육 커리큘럼" ; // 페이지 타이틀
 %>
 <c:set var="GROUP_CODE" value="<%=GROUP_CODE %>" />
 <c:set var="PAGE_CODE" value="<%=PAGE_CODE %>" />
@@ -44,6 +44,10 @@
           </div>
           <div class="shortcode1-1">
             <img alt="" src="/images/b/b_1_1.png" style="max-width:100%;">
+          </div>
+          <div class="shortcode1-1">&nbsp;</div>
+          <div class="shortcode1-1">
+            Note. 소·입·프: 소프트웨어입문프로젝트; 창·소·프: 창의적소프트웨어프로젝트; SW: Software; CSE: Computer Science & Engineering
           </div>
           
         </div>

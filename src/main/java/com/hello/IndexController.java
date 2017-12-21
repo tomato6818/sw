@@ -31,8 +31,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/")
+	@Autowired
+	private BoardRepository boardRepo;
+	
+	@Autowired
+	private GalleryRepository galleryRepo;
+	
+	@RequestMapping({"/","/home"})
 	public String getPaging(Model m) {
+		
+		List<SWBOARD> noticeBoardList = boardRepo.findByNoticeyn("Y");
+		m.addAttribute("noticeBoardList", noticeBoardList);
 		return "index";
 
 	}

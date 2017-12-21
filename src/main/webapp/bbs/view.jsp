@@ -43,8 +43,10 @@
 			<span></span>
 		</div>
 		<div class="right">
-			<a href="javascript:location.href='/<%=pageType%>/move_update?id=<%=board.getId()%>'" class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 수정</a>	
-			<a href="javascript:_delete('<%=board.getId()%>')" class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 삭제</a>	
+			<%if(auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){%>
+				<a href="javascript:location.href='/<%=pageType%>/move_update?id=<%=board.getId()%>'" class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 수정</a>	
+				<a href="javascript:_delete('<%=board.getId()%>')" class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 삭제</a>	
+			<%} %>
 		</div>
 	</div>
 	
@@ -84,7 +86,7 @@
 	  <!-- 첨부파일이 이미지인 경우 -->
 	  <%
 	  if(board.getImagesavefile()!=null){%>
-	 	 <img src="/board/download?name=<%=board.getImagesavefile() %>" style="height:auto; min-height:300px;">
+	 	 <img src="/file/download?name=<%=board.getImagesavefile() %>" style="height:auto; min-height:300px;">
 	  <%} %>
 	  </div>
     <!-- 본문 내용 시작 { -->
@@ -96,56 +98,27 @@
 	
 	<ul class="file">
 		<%
-			
-			String file1=board.getFile1();
-			String file2=board.getFile2();
-			String file3=board.getFile3();
-			
-			if(file1!=null)
-			{
-				
-				%>
-				<li>
-				<a href="/board/download?name=<%=board.getSavefile1() %>" class="view_file_download">
-					<span class="icon" title="첨부파일"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
-					<strong><%=file1 %></strong> <small style="display:none">(000KB?>)</small>
-				</a>
-				<span class="count" style="display:none">다운로드: <strong>100</strong>회</span>&nbsp;&nbsp;&nbsp;
-				<span style="display:none">첨부일시: 2017-11-19 00:00:00</span>
-				</li>
-				<% 
+			String[] file=board.getFiles();
+			String[] savefile=board.getSaveFiles();
+		
+			for(int i=0;i<file.length;i++){
+				String fileName=file[i];
+				if(fileName!=null){
+					%>
+					<li>
+					<a href="/file/download?name=<%=savefile[i] %>" class="view_file_download">
+						<span class="icon" title="첨부파일"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+						<strong><%=fileName %></strong> <small style="display:none">(000KB?>)</small>
+					</a>
+					<span class="count" style="display:none">다운로드: <strong>100</strong>회</span>&nbsp;&nbsp;&nbsp;
+					<span style="display:none">첨부일시: 2017-11-19 00:00:00</span>
+					</li>
+					<% 
+					
+				}
 			}
-
-			if(file2!=null)
-			{
 				
-				%>
-				<li>
-				<a href="/board/download?name=<%=board.getSavefile2() %>" class="view_file_download">
-					<span class="icon" title="첨부파일"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
-					<strong><%=file2 %></strong> <small style="display:none">(000KB?>)</small>
-				</a>
-				<span class="count" style="display:none">다운로드: <strong>100</strong>회</span>&nbsp;&nbsp;&nbsp;
-				<span style="display:none">첨부일시: 2017-11-19 00:00:00</span>
-				</li>
-				<% 
-			}
-			
-
-			if(file3!=null)
-			{
 				
-				%>
-				<li>
-				<a href="/board/download?name=<%=board.getSavefile3() %>" class="view_file_download">
-					<span class="icon" title="첨부파일"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
-					<strong><%=file3 %></strong> <small style="display:none">(000KB?>)</small>
-				</a>
-				<span class="count" style="display:none">다운로드: <strong>100</strong>회</span>&nbsp;&nbsp;&nbsp;
-				<span style="display:none">첨부일시: 2017-11-19 00:00:00</span>
-				</li>
-				<% 
-			}
 			
 		%>
 			

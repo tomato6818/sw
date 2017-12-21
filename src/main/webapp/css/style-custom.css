@@ -308,7 +308,7 @@ div.body-wrapper{ -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4); }
 #header h1 {position:absolute; width:339px; height:48px; padding:20px 0 0px 0; z-index:100;}
 
 /* TOP gnb */
-#menu {position:absolute; right:0px; width:100%; top:56px; height:63px; z-index:90; }
+#menu {position:absolute; right:0px; width:100%; top:22px; height:63px; z-index:90; }
 
 .gnbDiv {position:absolute; top:0; left:0; min-width:1160px; width:100%; height:380px; overflow:hidden; z-index:99; }
 .gnbDiv .gnbWrap {position: relative; top:0; margin: 0 auto; overflow: hidden; width:1160px; height:380px; z-index:99;} 
@@ -362,7 +362,7 @@ div.body-wrapper{ -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4); }
 #partner .next {position:absolute; display:inline-block; width:30px; height:31px; margin:-32px 0 0 -89px; background:url('../images/arrow.gif') right top no-repeat; text-indent:-9999px; font-size:0;}
 
 /* 메인 */
-#visual {position:relative; width:100%; height:400px; clear:both; overflow:hidden; text-align:center; background-color:#f5f5f5; }
+#visual {position:relative; width:100%; height:400px; clear:both; overflow:hidden; text-align:center; background-color:#f5f5f5; border-top:1px solid #eee; }
 .mainVisualWrap .mainVisual { width:100%; height:400px; text-align:center;}
 .mainVisualWrap .mainVisual.No1 { background:url('../images/main/main_bnr_1.png') no-repeat top center; background-size:cover; }
 .mainVisualWrap .mainVisual.No2 { background:url('../images/main/main_bnr_2.png') no-repeat top center; background-size:cover; }
@@ -400,9 +400,9 @@ div.body-wrapper{ -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4); }
 #banner li span:nth-child(2) {display:inline-block; width:100%; margin-top:20px; line-height:30px;}
 
 /* 공지사항 */
-#customer {padding:40px 0; overflow:hidden; background:#fff; border-bottom:1px solid #ededed; }
+#customer {padding:40px 0; background:#fff; border-bottom:1px solid #ededed; }
 #customer .cont_1160 {position:relative;}
-#customer .board {position:relative; float:left; padding:35px 26px 0  26px; width:450px; background:#fff; border:1px solid #ededed; }
+#customer .board { position:relative; display:inline-block; padding:35px 26px 0  26px; width:450px; height:250px; background:#fff; border:1px solid #ededed; margin-right:-3px; vertical-align:top; }
 #customer .board h2 {color:#333; padding-bottom:20px;}
 #customer .board ul {width:100%;}
 #customer .board li a:link, 
@@ -412,8 +412,11 @@ div.body-wrapper{ -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4); }
 #customer .board a.more {width:29px; height:29px; position:absolute; right:26px; top:35px;}
 #customer .board .banner {margin-top:8px; }
 
-#customer .notice_bg {background:url('/images/notice_bg.png') right bottom no-repeat; padding-bottom:40px;}
-#customer .edu_bg {background:url('/images/edu_bg.png') right bottom no-repeat; padding-bottom:40px;}
+#customer .notice_bg {padding-bottom:40px;}
+#customer .edu_bg {padding-bottom:40px;}
+.edu_bg li { line-height:1.6; }
+
+#customer .gallery {display:inline-block; width:260px; height:250px; margin:0px; padding:35px 26px 0  26px; border:1px solid #ededed; vertical-align:top; text-align:center; }
 
 /* 추천도서 */
 a.bn_book {display:block; float:left; text-align:center; width:260px; height:250px; margin:0px; padding:0; color:#fff; background:url('../images/main/bn_book.png') no-repeat; cursor:pointer; }
@@ -424,3 +427,116 @@ a.bn_book span {color:#c0ddf8;}
 a.bn_policy {display:block; float:left; text-align:center; height:71px; width:266px; margin:0 2px; padding:135px 0 40px 0; color:#fff; background:url('/images/bn_policy.jpg') no-repeat;}
 a.bn_policy h2 {padding-bottom:10px;}
 a.bn_policy span {color:#c0ddf8;}
+
+.location {position:relative;}
+.location .loc_img {position:relative; padding-bottom:30px;}
+.location .btn_area {position:absolute; right:0; top:0;}
+
+.map_table {width:100%; border-collapse:separate; border-spacing:0px; border-top:1px solid #333; border-left:1px solid #ddd;}
+.map_table th {color:#333; text-align:left; padding:10px 15px; border-bottom:1px solid #ddd; border-right:1px solid #ddd; background-color:#f9f9f9; font-size:13px; line-height:140%;}
+.map_table td {text-align:left; border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding:15px; font-size:13px; vertical-align:top;} 
+.map_table td.bus strong {display:block; padding-bottom:15px; color:#333; text-decoration:underline;}   
+.map_table td.bus span {display:inline-block; border-radius:2px; width:50px; text-align:center; height:22px; line-height:22px; color:#fff; margin-right:10px;}  
+.map_table td.bus span.blue {background:#3b83c6;}
+.map_table td.bus span.green {background:#aacd06;}
+.map_table td.bus p {margin-bottom:6px; line-height:22px;} 
+.map_table td.subway p {margin-bottom:7px; line-height:30px;} 
+.map_table td.subway img {margin-right:10px;}
+.map_table a:hover {color:#1985e9; text-decoration:underline;}
+
+.location .map_info {color:#00b3d3; margin-top:20px; letter-spacing:-0.2pt;}
+.location .map_info a {color:#fff; background:#00b3d3; display:inline-block; height:30px; line-height:30px; padding:0px 10px; text-align:center; letter-spacing:-0.2pt; font-weight:600;}
+.location .map_info a span {display:inline-block; width:20px; margin-left:4px; text-indent:-2222222222px; background:url('http://gifted.hanyang.ac.kr/about/img/comm_btm_location_micro.png') center no-repeat;}
+
+.dep1_tit {display:block; padding:0 0 18px 26px; background:url('http://gifted.hanyang.ac.kr/img/dep_tit.gif') left top no-repeat; font-weight:600; color:#333; font-size:17px; letter-spacing:-0.2pt; line-height:17px;}
+.dep1_cont {display:block; padding:0px 0 40px 0px;}
+.dep1_cont2 {display:block; padding:0 0 35px 12px;}
+.dep1_cont3 {display:block; padding:0 0 35px 15px;}
+.dep2_cont {display:block; padding:0px 0 22px 0; letter-spacing:-0.2pt; line-height:150%;}
+.dep2_cont2 {display:block; padding:0px 0 22px 5px; letter-spacing:-0.2pt; line-height:150%;}
+.dep2_cont3 {display:block; padding:0px 0 22px 13px; letter-spacing:-0.2pt; line-height:150%;}
+.dep_dott {background:url('/img/dep_dott.gif') no-repeat left 9px; padding:0 0 5px 10px; display:block;}
+.dep1_cont4 {padding:0 0 5px 5px;}
+
+.txt_style {background:#f4f5f7; padding:20px 17px;}
+.txt_style li {background:url('/img/dep_dott.gif') no-repeat left 8px; padding:0 0 5px 10px; letter-spacing:-0.2pt;}
+.txt_style li:last-child {padding-bottom:0px;}
+.txt_style li strong {color:#333;}
+.slash_box {background:url('/admission/img/slash_bg.gif') repeat;}
+
+.table_style {width:100%; border-collapse:separate; border-spacing:0px; border-top:1px solid #333; border-left:1px solid #ddd;}
+.table_style th {color:#333; text-align:center; padding:12px 0 12px 0; border-bottom:1px solid #ddd; border-right:1px solid #ddd; background-color:#f9f9f9; font-size:13px; letter-spacing:-0.2pt;}
+.table_style td {text-align:center; border-right:1px solid #ddd; border-bottom:1px solid #ddd; padding:12px 10px; font-size:13px; letter-spacing:-0.2pt;} 
+.table_style td strong {color:#333;}
+.table_style td.left {text-align:left;}
+.table_style td.right {text-align:right;}
+.table_style td.grayBg {background:#f6f6f6;}
+.table_style td.yellowBg {background:#fffff3;}
+.table_style td.blueBg {background:#ecf2f9;}
+
+.table_left	{width:100%; border-top:1px solid #333; border-left:1px solid #ddd; border-collapse:collapse; border-spacing:0px;}
+.table_left th {color:#333; text-align:left; padding:10px; border-bottom:1px solid #ddd; border-right:1px solid #ddd; background-color:#f9f9f9; font-weight:600; letter-spacing:-0.2pt; font-size:13px;}
+.table_left td {text-align:left; padding:10px; border-right:1px solid #ddd; border-bottom:1px solid #ddd;  font-size:13px;}
+
+// 프로그램 접수현황 본문
+.module-professor-view .content{min-height:332px}
+.heading-1{margin:20px 0;font-size:22px;font-weight:bold;line-height:1.4em;letter-spacing:-2px;color:#2b5398}
+.list-primary{margin:12px 0;padding:0;list-style:none}
+.list-primary>li{margin:30px 0;padding-left:10px}
+.list-primary>li strong:first-child{display:block;margin:0 0 4px -10px;padding-left:7px;background-image:url(../images/primary.png);background-repeat:no-repeat;background-position:0 50%;background-size:auto auto;font-size:16px;font-weight:bold;line-height:1.4em;letter-spacing:-1px;color:#333}
+.list-year{margin:12px 0;padding:0;list-style:none}
+.list-year>li{position:relative;padding-left:50px}
+.list-year>li strong:first-child{position:absolute;left:0;top:0;font-weight:normal}
+.list-step{margin:12px 0;padding:0;list-style:none;overflow:hidden}
+.list-step>li{float:left;padding:0 16px 0 25px;background-image:url(../images/step_arrow.png);background-repeat:no-repeat;background-position:0 50%;background-size:auto auto}
+.list-step>li:first-child{padding-left:0;background:none}
+.module-mentor-report .heading-1 select{margin-right:6px;border-radius:4px;padding:4px 10px;font-size:16px;font-weight:normal;letter-spacing:0;color:#333}
+.module-content{margin-top:1px}
+.go-to-none-desktop-mode{display:block;margin:12px;border:10px solid #eee;padding:12px;text-align:center;font-size:50px;line-height:1.5em;background-color:#fff}
+
+.page-program .highlight {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.4em;
+	letter-spacing: -1px;
+	color: #333
+}
+.page-program .btns {
+	margin-top: 80px;
+	text-align: center;
+}
+.page-program .btn-common, .page-program .btn-download {
+	display: inline-block;
+	margin: 0 2px;
+	padding: 0 27px;
+	background-color: #50afc6;
+	border-radius: 100px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 50px;
+	letter-spacing: -1px;
+	-webkit-transition: background-color 0.3s;
+	-o-transition: background-color 0.3s;
+	transition: background-color 0.3s
+}
+.page-program .btn-common:focus, .page-program .btn-common:hover, .page-program .btn-download:focus, .page-program .btn-download:hover {
+	background-color: #2b5398;
+}
+.page-program .btn-download {
+	padding-left: 70px;
+	background-image: url(../images/icon_download.png);
+	background-repeat: no-repeat;
+	background-position: 28px 50%;
+	color: #fff;
+	background-size: auto auto
+}
+.page-program-global-2 .page-title, .page-program-nonsubject-2 .page-title {
+	font-size: 24px;
+	letter-spacing: -2px
+}
+.page-program-global-2 .breadcrumb a, .page-program-nonsubject-2 .breadcrumb a {
+	padding: 0 2px 0 7px
+}
+.page-program-global-2 .breadcrumb li:first-child a, .page-program-nonsubject-2 .breadcrumb li:first-child a {
+	padding: 0 5px 0 12px
+}

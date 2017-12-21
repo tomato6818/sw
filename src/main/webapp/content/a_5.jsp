@@ -29,10 +29,14 @@
         <div class="rtbl">
 <%@include file="/inc/navi.jsp"%>
 
-<div>
-        컨텐츠
-</div>
-
+          <div class="shortcode1-1">
+            <p><span class="page_sub_title">SW중심대학사업단 연간일정표</span></p>
+          </div>
+          <div class="shortcode1-1">&nbsp;</div>
+          <div class="shortcode1-1">
+            <img alt="" src="/images/a/a_5_1.png" style="max-width:100%;">
+          </div>
+            
         </div>
         <!-- // 본문영역 -->
         

@@ -114,7 +114,10 @@
 			<a href="#" class="btn btn-sm btn-default">처음목록</a>
 		</div>
 		<div class="right">
-			<a href="/board/move_create"  class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i> 글쓰기</a>
+			<%
+		if(auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){%>
+			<a href="/board/move_create"  class="btn btn-sm btn-primary"><i class="fa fa-pencil" aria-hidden="true"></i>글쓰기</a>
+		<%} %>
 		</div>
 	</div>
 	

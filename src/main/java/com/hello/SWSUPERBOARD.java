@@ -217,5 +217,25 @@ public abstract class SWSUPERBOARD {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public String[] getFiles() {
+		String[] files= {file1,file2,file3};
+		return files;
+	}
+	
+	public String[] getFilesWithoutNull() {
+		String[] files= {file1==null?"":file1,file2==null?"":file2,file3==null?"":file3};
+		return files;
+	}
+	
+	
+	public String[] getSaveFiles() {
+		String[] files= {savefile1,savefile2,savefile3};
+		return files;
+	}
 
+	public String[] getSaveFilesWithoutNull() {
+		String[] files= {savefile1==null?"":savefile1,savefile2==null?"":savefile2,savefile3==null?"":savefile3};
+		return files;
+	}
 }

@@ -278,9 +278,10 @@
 .hd_pops_footer button {margin-right:5px;padding:5px 10px;border:0;background:#393939;color:#fff}
 
 .lnb {
-  width:210px;
+  width:220px;
 	display:inline-block;
 	margin-top: 0px;
+	margin-right:40px;
 	margin-bottom: 40px;
 	border-top: 3px solid #495267;
 }
@@ -307,7 +308,7 @@
 	padding-left:13px;
 }
 
-.page_row .on, .page_row:hover {
+.lnb .on, .page_row:hover {
 	color:#fff;
 	background-color:rgba(73,82,103, 0.8) ;
 	/* background-color:#495267 ; */
@@ -362,7 +363,7 @@
 	margin:0px;	
 	margin-bottom:10px;
 }
-@media (max-width:439px) {
+@media (max-width:640px) {
   .page_tltle { width:100%; font-size:130%; line-height:1.6; }
   .navi { width:100%; font-size:90%; text-align:LEFT; margin: 3px 0px 10px 0px;}
 }
@@ -379,8 +380,8 @@
 
 .BoxLine { clear:both; width:100%; table-layout:fixed; margin:0 0 0 0; border:1px solid #ddd; border-collapse:collapse; font-size:90%; margin-bottom:1em; }
 .BoxLine th { padding:1em; text-align:center; font-weight:600; letter-spacing:0em; border:1px #ddd solid; border-collapse:collapse; background-color:#f4f4f4; }
-.BoxLine td { padding:1em; }
-.BoxLine td { text-align:center; color:#767676; letter-spacing:0em; border:1px #ddd solid; border-collapse:collapse; }
+.BoxLine td { padding:1em; line-height:1.6; }
+.BoxLine td { text-align:center; color:#767676; letter-spacing:0em; border:1px #ddd solid; border-collapse:collapse; line-height:1.6; }
 .BoxLine td .field1 { text-align:center; letter-spacing:0em; border:1px #ddd solid; border-collapse:collapse; background-color:#f4f4f4; }
 .BoxLine td .field2 { text-align:left; letter-spacing:0em; padding-left:1em; border:1px #ddd solid; border-collapse:collapse; background-color:#ffffff; }
 .BoxLine .nobrd {border:0px #ddd solid; border-collapse:collapse; padding:.2em;}
@@ -469,7 +470,7 @@
 #st-view .info .desc .dropdown a { color: #999; text-decoration: none; }
 #st-view .info .desc .dropdown .mb_menu li a { color: #333; font-weight: normal; }
 #st-view .info .desc strong { color: #555; font-weight: bold; }
-#st-view .info .subject {padding-bottom:10px;}
+#st-view .info .subject { padding-top:20px; padding-bottom:10px; font-size:150%; color:#166cff; }
 
 #st-view .file { margin: 0; padding: 0; list-style: none; }
 #st-view .file li { color: #777; padding: 0 10px; border-bottom: 1px solid #eee; background: #f5f6fa; }
@@ -506,7 +507,7 @@
 
 /** 게시물 쓰기 **/
 #st-write .col-input { margin-bottom: 10px; }
-#st-write .col-input .input-group-addon { min-width: 70px; text-align: center; }
+#st-write .col-input .input-group-addon { min-width:90px; text-align: center; }
 #st-write .col-input .options { margin: 3px 0 0; }
 #st-write .editbox { margin-bottom: 10px; }
 #st-write .editbox .btn_cke_sc { display: none; }

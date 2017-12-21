@@ -65,8 +65,15 @@
 					  <span>
   					  <a href="#page=privacy">개인정보취급방침</a> | 
   					  <a href="mailto:">Contact Us</a> | 
-  					  <a href="/admin">Admin</a></span> | <span>
-  					  <a href="/bbs/logout.jsp">로그아웃</a>
+  					<%
+  					  if(auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){
+  					%>
+  					 	  <a href="/logout-admin">로그아웃</a>
+  					<%
+  					  }else{
+  					%> 
+  						<a href="/admin">Admin</a>
+  				    <%}%>
     				</span>
     			</p>
 				</div>
