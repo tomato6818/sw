@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="com.hello.SWGALLERY"%>
+<%@page import="com.sw.db.SWGALLERY"%>
 <%
 	String GROUP_CODE = "A" ;
 	String PAGE_CODE = "a_4" ;

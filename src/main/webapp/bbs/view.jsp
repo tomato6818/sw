@@ -1,6 +1,6 @@
-<%@page import="com.hello.SWSUPERBOARD"%>
+<%@page import="com.sw.db.SWSUPERBOARD"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="com.hello.SWSUPERBOARD"%>
+<%@page import="com.sw.db.SWSUPERBOARD"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String GROUP_CODE = "E" ;

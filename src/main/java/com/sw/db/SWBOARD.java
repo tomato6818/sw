@@ -1,4 +1,4 @@
-package com.hello;
+package com.sw.db;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -17,7 +17,16 @@ import javax.persistence.TemporalType;
 import org.springframework.beans.factory.annotation.Value;
 
 @Entity
-@Table(name="SWGALLERY")
-public class SWGALLERY extends SWSUPERBOARD implements Serializable {
+@Table(name="SWBOARD")
+public class SWBOARD extends SWSUPERBOARD implements Serializable {
 
+	public String toString() {
+		
+		return 
+				"imagefile:"+getImagefile() 
+		+ "file1:"+getFile1() 
+		+" file2:"+getFile2()
+		+" file3:"+getFile3()
+		;
+	}
 }

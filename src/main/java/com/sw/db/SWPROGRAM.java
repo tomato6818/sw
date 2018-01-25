@@ -1,4 +1,4 @@
-package com.hello;
+package com.sw.db;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

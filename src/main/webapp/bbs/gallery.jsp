@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="org.springframework.data.domain.Page"%>
-<%@page import="com.hello.SWGALLERY"%>
+<%@page import="com.sw.db.SWGALLERY"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%

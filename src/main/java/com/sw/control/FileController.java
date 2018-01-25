@@ -1,4 +1,4 @@
-package com.hello;
+package com.sw.control;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
+
+import com.sw.FileManager;
 
 @Controller
 public class FileController {

@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="org.springframework.data.domain.Page"%>
-<%@page import="com.hello.SWBOARD"%>
+<%@page import="com.sw.db.SWBOARD"%>
 <%
 	String GROUP_CODE = "E" ;
 	String PAGE_CODE = "basic" ; // 게시판코드

@@ -1,5 +1,5 @@
-<%@page import="com.hello.SWSUPERBOARD"%>
-<%@page import="com.hello.SWBOARD"%>
+<%@page import="com.sw.db.SWSUPERBOARD"%>
+<%@page import="com.sw.db.SWBOARD"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 	String GROUP_CODE = "E" ;

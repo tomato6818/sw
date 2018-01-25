@@ -1,7 +1,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="com.hello.SWBOARD"%>
+<%@page import="com.sw.db.SWBOARD"%>
 <%
 	String GROUP_CODE = "" ;
 	String BBS_CODE = "" ; // 게시판코드
